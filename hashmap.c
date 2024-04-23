@@ -58,7 +58,7 @@ HashMap * createMap(long capacity)
   nuevoHashMap->buckets = (Pair **)malloc(sizeof(Pair *) * capacity);
   if (nuevoHashMap->buckets == NULL) exit(EXIT_FAILURE);
   nuevoHashMap->capacity = capacity;
-  nuevoHashMap->size = capacity;
+  nuevoHashMap->size = 0;
   nuevoHashMap->current = -1;
 
   for (long i = 0 ; i < nuevoHashMap->size ; i++)
