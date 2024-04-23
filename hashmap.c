@@ -83,19 +83,20 @@ Pair *firstMap(HashMap *map)
 {
   if (map == NULL) return NULL;
   
-  Pair *dato = NULL;
   for (long i = 0 ; i < map->capacity ; i++)
     if (map->buckets[i] != NULL)
     {
-      dato = map->buckets[i];
       map->current = i;
-      break;
+      return map->buckets[i];
     }
   
-  return dato;
+  return NULL;
 }
 
-Pair * nextMap(HashMap * map) {
+Pair * nextMap(HashMap * map)
+{
+  if (map->buckets == NULL) return NULL;
+  
   Pair *dato = map->buckets[map->current + 1];
   map->current = map->current + 1;
 
