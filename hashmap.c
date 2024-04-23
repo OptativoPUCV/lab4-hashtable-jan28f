@@ -99,13 +99,7 @@ void eraseMap(HashMap * map,  char * key)
 
 Pair * searchMap(HashMap * map,  char * key)
 {   
-  if (map == NULL || map->size == 0) return NULL;
-
-  long posicion = hash(key, map->capacity);
-  for (long i = 0 ; i < map->capacity ; i++)
-  {
-    if ("")
-  }
+  
   
   return NULL;
 }
