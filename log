@@ -26,3 +26,22 @@ Tue 23 Apr 2024 09:09:08 PM UTC:
  tests:  2|5
 total_score: 10/70
 069883c
+Tue 23 Apr 2024 09:15:02 PM UTC: 
+ hashmap.c | 24 +++++++++++++++++++++---
+ 1 file changed, 21 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+hashmap.c:105:22: error: ‘key’ undeclared here (not in a function); did you mean ‘key_t’?
+  105 | long posicion = hash(key, map->capacity);
+      |                      ^~~
+      |                      key_t
+hashmap.c:105:27: error: ‘map’ undeclared here (not in a function)
+  105 | long posicion = hash(key, map->capacity);
+      |                           ^~~
+hashmap.c:107:1: error: expected identifier or ‘(’ before ‘if’
+  107 | if (map->buckets[posicion] == NULL)
+      | ^~
+hashmap.c:112:1: error: expected identifier or ‘(’ before ‘else’
+  112 | else
+      | ^~~~
+Compilation failed
+c60688d
