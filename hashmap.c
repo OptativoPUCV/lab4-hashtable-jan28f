@@ -81,6 +81,8 @@ Pair * searchMap(HashMap * map,  char * key) {
 
 Pair *firstMap(HashMap *map) 
 {
+  if (map == NULL || map->current == -1) return NULL;
+  
   Pair *dato = map->buckets[0];
   map->current = 0;
 
