@@ -101,15 +101,3 @@ Pair * nextMap(HashMap * map) {
 
   return dato;
 }
-
-long posicion = hash(key, map->capacity);
-
-if (map->buckets[posicion] == NULL)
-{
-  map->buckets[posicion] = createPair(key, value);
-  map->current = posicion;
-}
-else
-{
-  nextMap(map);
-}
