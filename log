@@ -75,3 +75,14 @@ hashmap.c:112:1: error: expected identifier or ‘(’ before ‘else’
       | ^~~~
 Compilation failed
 f69aacd
+Tue 23 Apr 2024 09:16:54 PM UTC: 
+ hashmap.c | 11 -----------
+ 1 file changed, 11 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:86:9: error: ‘dato’ may be used uninitialized in this function [-Werror=maybe-uninitialized]
+   86 |   Pair *dato;
+      |         ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+4cfbdef
