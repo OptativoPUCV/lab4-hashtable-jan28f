@@ -39,9 +39,9 @@ int is_equal(void* key1, void* key2){
 }
 
 
-void insertMap(HashMap * map, char * key, void * value) {
-
-
+void insertMap(HashMap * map, char * key, void * value)
+{
+  
 }
 
 void enlarge(HashMap * map) {
@@ -67,7 +67,8 @@ HashMap * createMap(long capacity)
   return nuevoHashMap;
 }
 
-void eraseMap(HashMap * map,  char * key) {    
+void eraseMap(HashMap * map,  char * key)
+{    
 
 
 }
@@ -78,12 +79,17 @@ Pair * searchMap(HashMap * map,  char * key) {
     return NULL;
 }
 
-Pair * firstMap(HashMap * map) {
+Pair *firstMap(HashMap *map) 
+{
+  Pair *dato = map->buckets[0];
+  map->current = 0;
 
-    return NULL;
+  return dato;
 }
 
 Pair * nextMap(HashMap * map) {
+  Pair *dato = map->buckets[map->current + 1];
+  map->current = map->current + 1;
 
-    return NULL;
+  return dato;
 }
