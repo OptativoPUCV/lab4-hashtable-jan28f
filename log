@@ -104,3 +104,14 @@ Tue 23 Apr 2024 09:42:04 PM UTC:
  tests:  2|5
 total_score: 10/70
 f247f19
+Tue 23 Apr 2024 09:44:21 PM UTC: 
+ hashmap.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:87:9: error: variable ‘dato’ set but not used [-Werror=unused-but-set-variable]
+   87 |   Pair *dato = NULL;
+      |         ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+680a93e

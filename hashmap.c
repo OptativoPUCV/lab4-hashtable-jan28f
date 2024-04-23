@@ -57,6 +57,7 @@ HashMap * createMap(long capacity)
   if (nuevoHashMap == NULL) exit(EXIT_FAILURE);
   nuevoHashMap->buckets = (Pair **)malloc(sizeof(Pair *) * capacity);
   if (nuevoHashMap->buckets == NULL) exit(EXIT_FAILURE);
+  
   nuevoHashMap->capacity = capacity;
   nuevoHashMap->size = 0;
   nuevoHashMap->current = -1;
@@ -81,13 +82,15 @@ Pair * searchMap(HashMap * map,  char * key) {
 
 Pair *firstMap(HashMap *map) 
 {
-  if (map == NULL) return NULL;
+  if (map == NULL || map->size == 0) return NULL;
   
+  Pair *dato = NULL;
   for (long i = 0 ; i < map->capacity ; i++)
     if (map->buckets[i] != NULL)
     {
+      dato = map->buckets[i];
       map->current = i;
-      return map->buckets[i];
+      break;
     }
   
   return NULL;
