@@ -53,7 +53,8 @@ void insertMap(HashMap * map, char * key, void * value)
       map->current = posicion;
     }
 
-    posicion = (posicion + 1) % map->capacity;
+    posicion++;
+    if (posicion == map->capacity) posicion = 0;
   }
 }
 

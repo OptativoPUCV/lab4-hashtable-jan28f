@@ -177,3 +177,17 @@ hashmap.c:103:8: error: unused variable ‘posicion’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 0431f04
+Tue 23 Apr 2024 11:37:56 PM UTC: 
+ hashmap.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:108:3: error: expected expression before ‘}’ token
+  108 |   }
+      |   ^
+hashmap.c:104:8: error: unused variable ‘posicion’ [-Werror=unused-variable]
+  104 |   long posicion = hash(key, map->capacity);
+      |        ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+625a732
