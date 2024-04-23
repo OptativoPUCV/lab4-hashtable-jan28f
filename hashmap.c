@@ -81,7 +81,7 @@ Pair * searchMap(HashMap * map,  char * key) {
 
 Pair *firstMap(HashMap *map) 
 {
-  if (map == NULL || map->size == -1) return NULL;
+  if (map == NULL) return NULL;
   
   Pair *dato;
   for (long i = 0 ; i < map->capacity ; i++)
@@ -100,4 +100,16 @@ Pair * nextMap(HashMap * map) {
   map->current = map->current + 1;
 
   return dato;
+}
+
+long posicion = hash(key, map->capacity);
+
+if (map->buckets[posicion] == NULL)
+{
+  map->buckets[posicion] = createPair(key, value);
+  map->current = posicion;
+}
+else
+{
+  nextMap(map);
 }
