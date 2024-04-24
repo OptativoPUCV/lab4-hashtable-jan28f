@@ -352,3 +352,14 @@ Wed 24 Apr 2024 03:29:08 AM UTC:
  tests:  16|1
 total_score: 60/70
 4c5562b
+Wed 24 Apr 2024 03:45:12 AM UTC: 
+ hashmap.c | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:63:10: error: variable ‘nuevoBuckets’ set but not used [-Werror=unused-but-set-variable]
+   63 |   Pair **nuevoBuckets = (Pair **)malloc(sizeof(Pair *) * map->capacity);
+      |          ^~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+3e6f86a
