@@ -220,3 +220,14 @@ Wed 24 Apr 2024 12:41:56 AM UTC:
  tests:  4|5
 total_score: 20/70
 a1cc629
+Wed 24 Apr 2024 12:45:10 AM UTC: 
+ hashmap.c | 21 +++------------------
+ 1 file changed, 3 insertions(+), 18 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:113:8: error: unused variable ‘posicion’ [-Werror=unused-variable]
+  113 |   long posicion = hash(key, map->capacity);
+      |        ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+2e7f489
