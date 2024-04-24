@@ -101,7 +101,7 @@ Pair * searchMap(HashMap *map,  char *key)
   for (long contador = 0 ; contador < map->capacity ; contador++)
   {
     map->current = posicion;
-    if (map->buckets[posicion] == NULL) return dato;
+    if (map->buckets[posicion] == NULL || map->buckets[posicion]->key == NULL) return dato;
     else
     {
       if (is_equal(map->buckets[posicion]->key, key))
