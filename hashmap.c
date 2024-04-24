@@ -92,7 +92,7 @@ void eraseMap(HashMap * map,  char * key)
     nextMap(map);
 }
 
-Pair * searchMap(HashMap *map,  char *key)
+Pair *searchMap(HashMap *map,  char *key)
 {
   if (map == NULL || map->size == 0) return NULL;  
 
@@ -100,12 +100,14 @@ Pair * searchMap(HashMap *map,  char *key)
   long posicion =  hash(key, map->capacity);
   for (long contador = 0 ; contador < map->capacity ; contador++)
   {
-    map->current = posicion;
-    if (map->buckets[posicion] == NULL || map->buckets[posicion]->key == NULL) return dato;
+    if (map->buckets[posicion] == NULL) return dato;
     else
     {
       if (is_equal(map->buckets[posicion]->key, key))
+      {
+        map->current = posicion;
         return dato;
+      }
     }
     posicion = (posicion + 1) % map->capacity;
   }
