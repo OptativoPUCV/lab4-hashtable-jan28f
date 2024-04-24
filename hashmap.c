@@ -119,14 +119,16 @@ Pair *firstMap(HashMap *map)
 {
   if (map == NULL || map->size == 0) return NULL;
 
+  Pair *dato = NULL;
   for (long i = 0 ; i < map->capacity ; i++)
     if (map->buckets[i] != NULL) 
     {
       map->current = i;
-      return map->buckets[i];
+      dato = map->buckets[i];
+      break;
     }
 
-  return NULL;
+  return dato;
 }
 
 Pair *nextMap(HashMap *map)
