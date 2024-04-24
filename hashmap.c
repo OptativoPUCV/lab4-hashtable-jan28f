@@ -77,14 +77,14 @@ HashMap * createMap(long capacity)
   return nuevoHashMap;
 }
 
-void eraseMap(HashMap * map,  char * key)
+void eraseMap(HashMap *map,  char *key)
 {
   if (map == NULL || map->size == 0) return;
 
   long posicion = hash(key, map->capacity);
   for (long contador = 0 ; contador < map->capacity ; contador++)
   {
-    if (is_equal(map->buckets[posicion]->key, key))
+    if ((map->buckets[posicion]->key != NULL) && is_equal(map->buckets[posicion]->key, key))
     {
       map->buckets[posicion]->key = NULL;
       map->buckets[posicion]->value = NULL;
