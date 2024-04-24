@@ -60,7 +60,12 @@ void enlarge(HashMap *map)
 {
   enlarge_called = 1; //no borrar (testing purposes)
 
-  Pair **nuevoBuckets = map->buckets;
+  Pair **nuevoBuckets = (Pair **)malloc(sizeof(Pair *) * map->capacity);
+  nuevoBuckets = map->buckets;
+
+  map->buckets = (Pair **)malloc(sizeof(Pair *) * map->capacity * 2);
+
+  map->buckets = nuevoBuckets;
 }
 
 HashMap * createMap(long capacity)
