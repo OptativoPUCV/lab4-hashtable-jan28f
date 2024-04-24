@@ -83,13 +83,8 @@ void enlarge(HashMap *map)
   for (long i = 0; i < map->capacity / 2 ; i++)
     {
       if (antiguoBuckets[i] != NULL && antiguoBuckets[i]->key != NULL)
-      {
         insertMap(map, antiguoBuckets[i]->key, antiguoBuckets[i]->value);
-        
-      }
-      
     }
-  
 }
 
 HashMap * createMap(long capacity)
