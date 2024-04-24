@@ -267,3 +267,14 @@ Wed 24 Apr 2024 01:01:01 AM UTC:
  tests:  6|4
 total_score: 30/70
 0c48c9b
+Wed 24 Apr 2024 01:02:47 AM UTC: 
+ hashmap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:99:9: error: unused variable ‘dato’ [-Werror=unused-variable]
+   99 |   Pair *dato = NULL;
+      |         ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+8b17708

@@ -100,19 +100,19 @@ Pair *searchMap(HashMap *map,  char *key)
   long posicion =  hash(key, map->capacity);
   for (long contador = 0 ; contador < map->capacity ; contador++)
   {
-    if (map->buckets[posicion] == NULL) return dato;
+    if (map->buckets[posicion] == NULL) return NULL;
     else
     {
       if (is_equal(map->buckets[posicion]->key, key))
       {
         map->current = posicion;
-        return dato;
+        return map->buckets[posicion];
       }
     }
     posicion = (posicion + 1) % map->capacity;
   }
   
-  return dato;
+  return NULL;
 }
 
 Pair *firstMap(HashMap *map) 
