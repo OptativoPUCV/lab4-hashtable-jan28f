@@ -82,14 +82,17 @@ void eraseMap(HashMap * map,  char * key)
   if (map == NULL || map->size == 0) return;
 
   long posicion = hash(key, map->capacity);
-  if (map->buckets[posicion] == NULL)
+  for (long contador = 0 ; contador < map->capacity ; contador++)
   {
-    map->buckets[posicion]->key = NULL;
-    map->buckets[posicion]->value = NULL;
-    map->size--;
+    if (is_equal(map->buckets[posicion]->key, key))
+    {
+      map->buckets[posicion]->key = NULL;
+      map->buckets[posicion]->value = NULL;
+      map->size--;
+      return;
+    }
+    posicion = (posicion + 1) % map->capacity;
   }
-  else
-    nextMap(map);
 }
 
 Pair *searchMap(HashMap *map,  char *key)
