@@ -96,7 +96,6 @@ Pair *searchMap(HashMap *map,  char *key)
 {
   if (map == NULL || map->size == 0) return NULL;  
 
-  Pair *dato = NULL;
   long posicion =  hash(key, map->capacity);
   for (long contador = 0 ; contador < map->capacity ; contador++)
   {
