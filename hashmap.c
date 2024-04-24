@@ -101,13 +101,11 @@ Pair *searchMap(HashMap *map,  char *key)
   {
     if (map->buckets[posicion] == NULL) return NULL;
     else
-    {
       if (is_equal(map->buckets[posicion]->key, key))
       {
         map->current = posicion;
         return map->buckets[posicion];
       }
-    }
     posicion = (posicion + 1) % map->capacity;
   }
   
