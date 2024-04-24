@@ -60,8 +60,8 @@ void enlarge(HashMap *map)
 {
   enlarge_called = 1; //no borrar (testing purposes)
 
-  Pair **nuevoBuckets = (Pair **)malloc(sizeof(Pair *) * map->capacity);
-  nuevoBuckets = map->buckets;
+  //Pair **nuevoBuckets = (Pair **)malloc(sizeof(Pair *) * map->capacity);
+  //nuevoBuckets = map->buckets;
 
   map->capacity = map->capacity * 2;
   map->buckets = (Pair **)malloc(sizeof(Pair *) * map->capacity);

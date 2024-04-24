@@ -363,3 +363,8 @@ hashmap.c:63:10: error: variable ‘nuevoBuckets’ set but not used [-Werror=un
 cc1: all warnings being treated as errors
 Compilation failed
 3e6f86a
+Wed 24 Apr 2024 03:45:28 AM UTC: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  0|0
+9d99649
